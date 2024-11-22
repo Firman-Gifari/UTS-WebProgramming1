@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu (After Login)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style_uts.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="main_menu_after.html">KidzLearn</a>
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="main_menu_after.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses_menu.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_menu.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-login" href="login_menu.html">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="main-section" style="padding-bottom: 7px; margin-top: 5px;">
+        <div class="container">
+            <h1>
+                Hello There!!
+                <span id="username"></span>
+            </h1>
+            <p>"The more that you read, the more things you’ll know. 
+                The more that you learn, the more places you’ll go"
+            </p>
+            <p>- Dr. Seuss</p>
+            <img src="images/KidzLearn_White.png" width="400px" height="225px">
+        </div>
+    </section>
+
+    <section class="courses-section">
+        <div class="container">
+            <div class="text-center">
+                <a href="about_menu.html">
+                    <button class="btn btn-primary" style="font-size: 16px; border:none ;padding: 15px 30px; background-color: #ffa500;">
+                        About Us
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer
+    class="text-center mt-5" 
+    style="background-color: #000000; color: #FFFFFF; height: 60px; align-content: center;">
+        <b>@Copyright by 22552011183_FIRMAN GIFARI</b>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const username = localStorage.getItem("loggedInUser");
+
+            if(username) {
+                document.getElementById("username").textContent = username;
+            } else {
+                window.location.href = "login_menu.html";
+            }
+        });
+    </script>
+</body>
+
+</html>
